@@ -8,7 +8,7 @@ sumButton.addEventListener('click', (event) => {
   
   let total = 0
   for (let i = 0; i < inputs.length; i++) {
-    total += Number(inputs[i].value)
+    total += inputs[i].value
   }
 
   result.innerHTML = total
