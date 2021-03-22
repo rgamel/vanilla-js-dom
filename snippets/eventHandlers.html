@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handling Events</title>
+</head>
+<body>
+
+<!--Inline handler: don't use these. There are better ways available now-->
+<button onclick="btnClick()">Click Me</button>
+
+<script>
+  function btnClick() {
+    console.log('Button 1 clicked.');
+  }
+</script>
+
+<!-- node event (do it this way instead)-->
+<button id="my-btn">Click Me</button>
+
+<script>
+  var button2 = document.querySelector('#my-btn')
+  function function1() {
+    console.log('Button 2 clicked.')
+  }
+  function function2() {
+    console.log('Button 2 double-clicked.')
+  }
+
+  button2.onclick = function1
+  button2.ondblclick = function2
+
+  //and so on...
+</script>
+
+<!--.addEventListener(..)-->
+<button id="btn3">Click me</button>
+<script>
+  let button3 = document.querySelector('#btn3')
+  button3.addEventListener('click', () => {
+    console.log('Button 3 clicked.')
+  })
+</script>
+
+<!--remove event listeners to change functionality-->
+<button id="once-btn">Act-once button</button>
+<script>
+  let button4 = document.querySelector('#once-btn')
+  function once() {
+    console.log('Done.')
+    button4.removeEventListener('click', once)
+  }
+  button4.addEventListener('click', once)
+</script>
+</body>
+</html>

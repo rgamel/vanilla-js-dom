@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorite Foods Form</title>
+</head>
+
+<body>
+  <form name="favoriteFoods">
+    <input name="name" type="text">
+    Name
+    <ul>
+      <li>
+        <input type="checkbox" id="katsucurry" name="foods[]" value="Katsu Curry">
+        Katsu Curry
+      </li>
+      <li>
+        <input type="checkbox" id="tacos" name="foods[]" value="Tacos">
+        Tacos
+      </li>
+      <li>
+        <input type="checkbox" id="burgers" name="foods[]" value="Burgers">
+        Burgers
+      </li>
+      <li>
+        <input type="checkbox" id="bulgogi" name="foods[]" value="Bulgogi">
+        Bulgogi
+      </li>
+    </ul>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    let favoriteFoods = document.forms.favoriteFoods;
+		// favoriteFoods.elements.name = 'Zach';
+		// check two of the boxes before submitting the form.  
+		// notice the checkboxes are selected by ID instead of name in this case
+		// favoriteFoods.elements.katsucurry.checked = true;
+		// favoriteFoods.elements.bulgogi.checked = true;
+		// favoriteFoods.submit(); // submit the form
+  </script>
+
+</body>
+
+</html>

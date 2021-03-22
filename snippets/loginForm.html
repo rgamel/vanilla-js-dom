@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form name="login">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <button type="submit">
+      Log in
+    </button>
+  </form>
+  <script>
+    // select a form element with a name attribute of 'login'
+    // you could also access this element by array index or id
+		let loginForm = document.forms.login
+		let username = loginForm.username
+		let password = loginForm.password
+		// username.value = 'ryan'
+		// password.value = 'password'
+		function submit() { loginForm.submit() } // would submit the form
+  </script>
+</body>
+</html>
