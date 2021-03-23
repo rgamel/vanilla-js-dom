@@ -39,8 +39,12 @@
 <button id="btn3">Click me</button>
 <script>
   let button3 = document.querySelector('#btn3')
-  button3.addEventListener('click', () => {
+  const cb = () => {
     console.log('Button 3 clicked.')
+  }
+  const eventsToListenFor = [['click', cb], ['dblClick', otherCb]]
+  eventsToListenFor.forEach(([event, callback]) => {
+    button3.addEventListener(event, callback)
   })
 </script>
 

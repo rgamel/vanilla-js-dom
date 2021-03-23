@@ -12,7 +12,7 @@ const setIsLoading = (val) => {
 }
 
 // async error handling with try/catch:
-const getDataForDisplay = () => {
+const getDataForDisplay = async () => {
   try {
     setIsLoading(true)
     const data = await DataService.retrieveData()
