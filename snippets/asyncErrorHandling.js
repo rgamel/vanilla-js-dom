@@ -12,14 +12,14 @@ const setIsLoading = (val) => {
 }
 
 // async error handling with try/catch:
-const getDataForDisplay = () => {
+const getDataForDisplay = async () => {
+  setIsLoading(true)
   try {
-    setIsLoading(true)
     const data = await DataService.retrieveData()
     console.log(data.value)
   } catch (err) {
     // do something with the error
-    console.log(err)
+    console.error(err)
   } finally {
     setIsLoading(false)
   }  
@@ -28,13 +28,14 @@ const getDataForDisplay = () => {
 // equivalent to this one with Promises:
 const getDataForDisplayWithPromises = () => {
   setIsLoading(true)
-  return DataService.retrieveData.then(data => {
-    // do something with data
-    console.log(data.value)
-  }).catch((err) => {
-    // handle error
-    console.log(err)
-  }).finally(() => {
-    setIsLoading(false)
-  })
+  return DataService.retrieveData
+    .then(data => {
+        // do something with data
+        console.log(data.value)
+    }).catch((err) => {
+        // handle error
+        console.log(err)
+    }).finally(() => {
+        setIsLoading(false)
+    })
 }
